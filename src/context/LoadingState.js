@@ -17,7 +17,7 @@ export const LoadingState = (props) => {
         type: LoadingAction.SET_LOADING,
         loading: state.loading
       });
-    }, 5000);
+    }, 3000);
   }
 
   return (
