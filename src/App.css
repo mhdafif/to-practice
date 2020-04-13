@@ -1,12 +1,39 @@
 body {
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   background: #141414;
+  color: #ffffff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  src: url('/public/assets/fonts/Helvetica.ttf') format('truetype');
 }
 
 :root {
-  --border: 3px solid red;
   --wh: 300px;
   --transition: .5s ease-in-out;
+  --w100: 100%;
+}
+
+.container-fluid{
+  /* width: 100vw; */
+  padding-right: 25px; 
+  padding-left: 25px; 
+  height: 100vh;
+}
+
+.wrap-card{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card {
+  transition: all .5s ease-out;
+  flex-basis: 100px;
+  flex: 1;
+}
+
+.card img:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
 }
