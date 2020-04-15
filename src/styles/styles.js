@@ -14,10 +14,10 @@ const GridContainer = css`
 
 export const Grid = styled.div`
   ${props => props.container && GridContainer}
-  ${props => props.spacing && css`
+  /* ${props => props.spacing && css`
     width: calc(100% + ${8 * props.spacing}px);
     margin: ${-4 * props.spacing}px;
-  `}
+  `} */
   & > div {
     ${({spacing}) => spacing && css`
       padding: ${4 * spacing}px
@@ -28,7 +28,7 @@ export const Grid = styled.div`
 export const GridItem = styled.div`
   margin: 0;
   box-sizing: border-box;
-  border: solid 1px #c9c9c9;
+  /* border: solid 1px #c9c9c9; */
 
   /* Ada 2 approach terkait md dll */
   /* @media (min-width: 960px) {
