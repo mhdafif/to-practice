@@ -1,6 +1,6 @@
 import React from 'react'
 // import { LoadingContext } from '../context/LoadingContext';
-import { Heading, Grid, GridItem } from '../styles/styles';
+import { Heading, Grid, GridItem, Paper } from '../styles/styles';
 
 export const Playground = () => {
 
@@ -8,16 +8,20 @@ export const Playground = () => {
   // const { loading, setLoading } = loadingContext;
 
   return (
-    <>
-      <Grid container spacing={1}>
+    <div style={{margin: '12px'}}>
+      <Grid container spacing={3}>
         <GridItem sm={12} md={8} lg={6}>
-          Asoy
+          <Paper elevation={0}>
+            Asoy
+          </Paper>
         </GridItem>
         <GridItem sm={6}>
-          Geboy
+          <Paper>
+            Geboy
+          </Paper>
         </GridItem>
       </Grid>
       <Heading>Hello world</Heading>
-    </>
+    </div>
   )
 }

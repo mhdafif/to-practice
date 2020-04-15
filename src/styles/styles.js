@@ -14,10 +14,10 @@ const GridContainer = css`
 
 export const Grid = styled.div`
   ${props => props.container && GridContainer}
-  /* ${props => props.spacing && css`
+  ${props => props.spacing && css`
     width: calc(100% + ${8 * props.spacing}px);
     margin: ${-4 * props.spacing}px;
-  `} */
+  `}
   & > div {
     ${({spacing}) => spacing && css`
       padding: ${4 * spacing}px
@@ -60,4 +60,61 @@ export const GridItem = styled.div`
     max-width: calc(${props.sm / 12} * 100%);
     flex-basis: calc(${props.sm / 12} * 100%);
   `}
+`;
+
+export const Paper = styled.div`
+  padding: 12px;
+  text-align: center;
+  
+  /* color: rgba(0, 0, 0, 0.87); */
+  background-color: #424242;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  /* Rounded */
+  border-radius: 4px;
+
+    
+  /* Elevation1 */
+
+  box-shadow: 
+    0px 2px 1px -1px rgba(0,0,0,.2), 
+    0px 1px 1px 0px rgba(0,0,0,.14), 
+    0px 1px 3px 0px rgba(0,0,0,.12);
+    
+  ${props => {
+    if (props.elevation !== undefined) {
+      if (props.elevation === 0) {
+        return css`
+          box-shadow: none;
+        `
+      } else {
+        switch (props.elevation) {
+          case 1:
+            return css`
+              box-shadow: 
+                0px 2px 1px -1px rgba(0,0,0,.2), 
+                0px 1px 1px 0px rgba(0,0,0,.14), 
+                0px 1px 3px 0px rgba(0,0,0,.12);
+            `;
+          case 2:
+            return css`
+              box-shadow: 
+                0px 3px 1px -2px rgba(0,0,0,.2), 
+                0px 2px 2px 0px rgba(0,0,0,.14), 
+                0px 1px 5px 0px rgba(0,0,0,.12);
+            `;
+          case 3:
+            return css`
+              box-shadow: 
+                0px 3px 3px -2px rgba(0,0,0,.2), 
+                0px 3px 4px 0px rgba(0,0,0,.14), 
+                0px 1px 8px 0px rgba(0,0,0,.12);
+            `;
+        
+          default:
+            break;
+        }
+      }
+    }
+  }}
 `;
